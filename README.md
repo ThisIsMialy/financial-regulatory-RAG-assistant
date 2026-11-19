@@ -7,11 +7,12 @@ FinPolicy Hybrid RAG: a Financial &amp; Regulatory Compliance Assistant
 ![ChromaDB](https://img.shields.io/badge/Vector%20DB-ChromaDB-orange)
 ![Gemini](https://img.shields.io/badge/LLM-Gemini%202.5%20Flash-8E75B2)
 
-A production-oriented **Retrieval-Augmented Generation (RAG)** system designed to query multi-page financial compliance and regulatory policy PDFs (such as Bank Negara Malaysia policy documents and fintech SOPs) with **hybrid retrieval, strict hallucination guardrails, and verifiable page-level citations**.
+A production-oriented **Retrieval-Augmented Generation (RAG)** system designed to query multi-page financial compliance and regulatory policy PDFs (such as bank policy documents and fintech SOPs) with **hybrid retrieval, strict hallucination guardrails, and verifiable page-level citations**.
 
 ---
 ## System Architecture
-*will be uploaded*
+<img width="622" height="822" alt="System_Architecture" src="https://github.com/user-attachments/assets/c65583a7-429d-407b-8219-09efa2aa46b8" />
+
 
 ## Features
 * **Hybrid Retrieval (Dense + Sparse):** Combines semantic similarity via **ChromaDB** with exact keyword matching via **BM25 (`rank_bm25`)** using **Reciprocal Rank Fusion (RRF)**—ensuring domain-specific acronyms (e.g., *e-KYC*, *AML/CFT*) are never missed.
