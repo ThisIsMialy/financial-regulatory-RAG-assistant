@@ -13,6 +13,20 @@ A production-oriented **Retrieval-Augmented Generation (RAG)** system designed t
 ## System Architecture
 <img width="622" height="822" alt="System_Architecture" src="https://github.com/user-attachments/assets/c65583a7-429d-407b-8219-09efa2aa46b8" />
 
+## Project Structure
+
+```text
+finpolicy-rag/
+├── docs/               # Upload here: Source compliance & regulatory PDF documents
+├── chroma_db/          # Local persistent vector index (auto-generated)
+├── ingest.py           # PDF text extraction, metadata tagging & chunk indexing
+├── rag_engine.py       # Hybrid retriever (Chroma + BM25), RRF, guardrails & LLM client (Gemini)
+├── api.py              # FastAPI REST endpoints (/health, /query)
+├── ui.py               # Streamlit web interface with evidence viewer
+├── eval.py             # Retrieval evaluation benchmark
+└── requirements.txt    # Python dependencies
+```
+
 
 ## Features
 * **Hybrid Retrieval (Dense + Sparse):** Combines semantic similarity via **ChromaDB** with exact keyword matching via **BM25 (`rank_bm25`)** using **Reciprocal Rank Fusion (RRF)**—ensuring domain-specific acronyms (e.g., *e-KYC*, *AML/CFT*) are never missed.
